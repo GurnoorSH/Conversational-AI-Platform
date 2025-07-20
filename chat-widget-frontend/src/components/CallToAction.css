@@ -1,0 +1,53 @@
+.cta-container {
+    position: fixed;
+    /* Adjusted positioning for better pointing */
+    bottom: 95px; 
+    right: 100px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    pointer-events: none; 
+    z-index: 9997;
+}
+
+.cta-text {
+    background-color: #fff;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.cta-arrows {
+    /* This makes arrows line up horizontally */
+    display: flex; 
+}
+
+.arrow-animated {
+    color: #fff;
+    font-size: 2.2rem;
+    animation: bounceRight 1.5s infinite;
+}
+
+/* Stagger the animations */
+.arrow-animated:nth-child(2) {
+    animation-delay: 0.15s;
+}
+.arrow-animated:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Renamed and corrected keyframes to move RIGHT */
+@keyframes bounceRight {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(10px);
+    }
+    60% {
+        transform: translateX(5px);
+    }
+}

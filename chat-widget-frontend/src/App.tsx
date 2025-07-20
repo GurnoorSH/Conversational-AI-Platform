@@ -1,14 +1,15 @@
 // import React from 'react';
 import ChatWidget from './components/ChatWidget';
 import ArchitectureDiagram from './components/ArchitectureDiagram';
+import CallToAction from './components/CallToAction'; // Import the new component
 
 function App() {
   return (
     <>
-      {/* Renders in the background */}
       <ArchitectureDiagram />
       
-      {/* Renders on top, since it is position: fixed */}
+      {/* Renders on top */}
+      <CallToAction />
       <ChatWidget />
     </>
   );

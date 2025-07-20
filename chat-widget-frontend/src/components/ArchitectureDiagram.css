@@ -1,0 +1,120 @@
+:root {
+  --diagram-bg-start: #1e293b; /* Slate 800 */
+  --diagram-bg-end: #0f172a;   /* Slate 900 */
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-dim: #94a3b8;         /* Slate 400 */
+  --text-bright: #e2e8f0;      /* Slate 200 */
+  --glow-color: rgba(99, 102, 241, 0.3); /* Indigo */
+}
+
+.diagram-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  box-sizing: border-box;
+  background: var(--diagram-bg-end);
+  background-image: radial-gradient(circle at 50% 30%, var(--diagram-bg-start), var(--diagram-bg-end));
+  color: var(--text-bright);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-family);
+  text-align: center;
+}
+
+.diagram-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 5rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.diagram-grid {
+  display: grid;
+  /* Define 5 columns: Component, Connector, Component, Connector, Component */
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center; /* This is key for vertical alignment */
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.diagram-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 100%; /* Ensure columns stretch to fill space */
+}
+
+.column-title {
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tech-card {
+  width: 250px;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px var(--glow-color);
+}
+
+.tech-icon {
+  color: var(--secondary-color);
+  background: rgba(31, 41, 55, 0.8);
+  padding: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.tech-label h4 { margin: 0; font-size: 1.1rem; color: var(--text-bright); text-align: left;}
+.tech-label p { margin: 0; color: var(--text-dim); font-size: 0.9rem; text-align: left;}
+
+
+/* --- CONNECTORS --- */
+.connector-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+.connector-column .arrow-icon { color: #475569; }
+.connector-column .arrow-text {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.bidirectional-arrows {
+    display: flex;
+    flex-direction: column;
+}
+
+/* This is a simple trick to create a reverse arrow without JS */
+.bidirectional-arrows .arrow-icon:last-child {
+    transform: rotate(180deg);
+    margin-top: -10px;
+}

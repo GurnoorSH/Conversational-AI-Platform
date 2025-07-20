@@ -1,8 +1,17 @@
 // import React from 'react';
-import ChatWidget from './components/ChatWidget'
+import ChatWidget from './components/ChatWidget';
+import ArchitectureDiagram from './components/ArchitectureDiagram';
 
 function App() {
-  return <ChatWidget />;
+  return (
+    <>
+      {/* Renders in the background */}
+      <ArchitectureDiagram />
+      
+      {/* Renders on top, since it is position: fixed */}
+      <ChatWidget />
+    </>
+  );
 }
 
 export default App;

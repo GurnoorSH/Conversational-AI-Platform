@@ -9,8 +9,11 @@
 }
 
 .diagram-container {
-  width: 100%;
-  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   padding: 4rem 2rem;
   box-sizing: border-box;
   background: var(--diagram-bg-end);
@@ -19,14 +22,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-family: var(--font-family);
   text-align: center;
+  overflow: hidden;
 }
 
 .diagram-title {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
    background-clip: text;

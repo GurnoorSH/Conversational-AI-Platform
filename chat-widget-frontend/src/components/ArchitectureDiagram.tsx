@@ -3,6 +3,7 @@ import { FiSmartphone, FiArrowRight, FiCloud } from 'react-icons/fi';
 import { DiReact, DiPython } from 'react-icons/di';
 import { SiPostgresql } from 'react-icons/si';
 import './ArchitectureDiagram.css';
+import CallToAction from './CallToAction';
 
 // TechCard component remains unchanged
 const TechCard: React.FC<{ icon: React.ReactNode; title: string; subtitle: string }> = ({ icon, title, subtitle }) => (
@@ -19,6 +20,7 @@ const TechCard: React.FC<{ icon: React.ReactNode; title: string; subtitle: strin
 const ArchitectureDiagram: React.FC = () => {
   return (
     <div className="diagram-container">
+      <div className="diagram-container">
       <h1 className="diagram-title">Conversational AI Platform Architecture</h1>
       
       <div className="diagram-grid">
@@ -58,7 +60,9 @@ const ArchitectureDiagram: React.FC = () => {
           <TechCard icon={<FiCloud size={30} />} title="NLU Brain" subtitle="Google Dialogflow CX" />
           <TechCard icon={<SiPostgresql size={30} />} title="Database" subtitle="PostgreSQL" />
         </div>
-
+ <CallToAction />
+      </div>
+      
       </div>
     </div>
   );

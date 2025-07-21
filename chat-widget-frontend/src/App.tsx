@@ -9,7 +9,7 @@ function App() {
       <ArchitectureDiagram />
       
       {/* Renders on top */}
-      <CallToAction />
+      
       <ChatWidget />
     </>
   );

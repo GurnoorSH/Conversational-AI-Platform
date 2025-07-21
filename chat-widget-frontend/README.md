@@ -67,3 +67,9 @@ export default tseslint.config([
   },
 ])
 ```
+<!-- venv\Scripts\activate  -->
+<!-- uvicorn main:app --reload -->
+
+
+<!-- cd .\chat-widget-frontend\ -->
+<!-- npm run dev -->
